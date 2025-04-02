@@ -312,3 +312,27 @@ function downloadImage() {
     link.href = matrixCanvas.toDataURL("image/png");
     link.click();
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const quotes = [
+        "Unfortunately, no one can be told what the Matrix is. You have to see it for yourself.",
+        "I know Kung Fu.",
+        "Show me.",
+        "Dodge this.",
+        "What are you waiting for? You're faster than this. Don't think you are, know you are.",
+        "There is no spoon.",
+        "Choice is an illusion created between those with power and those without.",
+        "Neo, sooner or later you're going to realize just as I did that there's a difference between knowing the path and walking the path.",
+        "What do you want? - I want the same thing you want. I want what everybody wants. - What? - To be free.",
+        "Everything that has a beginning has an end.",
+    ];
+
+    const quoteElement = document.getElementById("randomQuote");
+
+    if (quoteElement) {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        quoteElement.textContent = quotes[randomIndex];
+    } else {
+        console.error('Element with ID "randomQuote" not found.');
+    }
+});
