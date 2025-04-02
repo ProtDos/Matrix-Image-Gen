@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrix Portrait Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas class="matrix-bg" id="bg-canvas"></canvas>
+
+  <div class="container">
+    <h1>MATRIX PORTRAIT GENERATOR</h1>
+    <p>Upload your image to be transformed into a Matrix-style digital portrait.</p>
+
+    <div class="upload-container">
+      <input type="file" id="file-input" accept="image/*" style="display: none;">
+      <button class="btn" id="upload-btn">UPLOAD IMAGE</button>
+      <span>OR</span>
+      <button class="btn" id="camera-btn">USE CAMERA</button>
+      <video id="camera-feed" style="display: none; width: 100%; max-width: 400px; border: 1px solid #00FF41;"></video>
+      <button class="btn" id="capture-btn" style="display: none;">CAPTURE</button>
+    </div>
+
+    <img id="original-image" alt="Original image">
+    <div class="loading" id="loading">PROCESSING IMAGE...</div>
+
+    <div class="control-panel" id="controls" style="display: none;">
+      <label>
+        Character Density
+        <input type="range" id="density" min="1" max="10" value="5">
+      </label>
+      <label>
+        Rain Speed
+        <input type="range" id="rain-speed" min="1" max="10" value="5">
+      </label>
+      <label>
+        Brightness
+        <input type="range" id="brightness" min="1" max="10" value="5">
+      </label>
+    </div>
+
+    <div class="canvas-container">
+      <canvas id="matrix-canvas"></canvas>
+    </div>
+
+    <div class="download-container" id="download-container">
+      <button class="btn" id="download-btn">DOWNLOAD IMAGE</button>
+    </div>
+  </div>
+
+  <footer>
+    Enter The Matrix | Created with Matrix Digital Rain Effect
+  </footer>
+
+  <script src="script.js"></script>
+</head>
+</html>
